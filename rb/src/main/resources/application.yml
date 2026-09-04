@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: resume-builder
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/resume_builder}
+
+app:
+  jwt:
+    # override in production: export JWT_SECRET=<64+ char random string>
+    secret: ${JWT_SECRET:change-me-in-production-this-must-be-at-least-64-characters-long!!}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24h
+
+server:
+  port: ${PORT:8080}
